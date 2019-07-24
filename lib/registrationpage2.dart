@@ -103,7 +103,7 @@ class _Registration2State extends State<Registration2> {
                         fontWeight: FontWeight.bold),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, '/login2');
+                    Navigator.pop(context);
                   },
                 ),
               ),
