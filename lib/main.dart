@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
         '/login2': (context) => Login2(),
         '/registration2': (context) => Registration2(),
         '/login3': (context) => Login3(),
-        '/registration3': (context) => Registration3()
+        '/registration3': (context) => Registration3(),
       },
     );
   }

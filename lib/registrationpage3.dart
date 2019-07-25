@@ -63,60 +63,65 @@ class _Registration3State extends State<Registration3> {
               child: Form(
                 key: _formKey,
                 autovalidate: _autoValidate,
-                child: Card(
-                  child: ListView(
-                    children: <Widget>[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          inputField(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 20),
-                              text: 'First Name *',
-                              prefixIcon: Icons.person,
-                              validator: validation.validateFirstName),
-                          inputField(
+                child: Hero(
+                  tag: 'card',
+                  child: Card(
+                    child: ListView(
+                      children: <Widget>[
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            inputField(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 20),
+                                text: 'First Name *',
+                                prefixIcon: Icons.person,
+                                validator: validation.validateFirstName),
+                            inputField(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                text: 'Last Name *',
+                                prefixIcon: Icons.person,
+                                validator: validation.validateLastName),
+                            inputField(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 20),
+                                text: 'E-mail *',
+                                prefixIcon: Icons.alternate_email,
+                                validator: validation.validateEmail),
+                            inputField(
                               padding: EdgeInsets.symmetric(horizontal: 10),
-                              text: 'Last Name *',
-                              prefixIcon: Icons.person,
-                              validator: validation.validateLastName),
-                          inputField(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 20),
-                              text: 'E-mail *',
-                              prefixIcon: Icons.alternate_email,
-                              validator: validation.validateEmail),
-                          inputField(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            text: 'Password *',
-                            prefixIcon: Icons.lock,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20.0),
-                            child: FlatButton(
-                              color: Colors.orange,
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16, horizontal: 50),
-                              onPressed: _validator,
-                              child: Text(
-                                'Submit',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(30.0),
-                              ),
+                              text: 'Password *',
+                              prefixIcon: Icons.lock,
                             ),
-                          )
-                        ],
-                      )
-                    ],
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 20.0),
+                              child: FlatButton(
+                                color: Colors.orange,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 50),
+                                onPressed: _validator,
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(30.0),
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    elevation: 5,
+                    margin: EdgeInsets.all(10),
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  elevation: 5,
-                  margin: EdgeInsets.all(10),
                 ),
               ),
             ),

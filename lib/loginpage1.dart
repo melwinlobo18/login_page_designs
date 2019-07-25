@@ -14,14 +14,14 @@ class Login1 extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 100, bottom: 30),
-                      child: Container(
-                        height: 80,
-                        width: 140,
-                        child: Placeholder(
-                          color: Colors.black,
-                        ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                    ),
+                    Container(
+                      height: 80,
+                      width: 140,
+                      child: Placeholder(
+                        color: Colors.black,
                       ),
                     ),
                     TextField(

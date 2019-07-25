@@ -28,6 +28,19 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
+  void emailEntered() {
+    if (emailController.value.text.isNotEmpty) {
+      setState(() {
+        isEmailIconVisible = true;
+      });
+    }
+    if (emailController.value.text.isEmpty) {
+      setState(() {
+        isEmailIconVisible = false;
+      });
+    }
+  }
+
   void passwordEntered() {
     if (emailController.value.text.isNotEmpty &&
         passwordController.value.text.isNotEmpty) {
@@ -42,19 +55,14 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
       });
     }
     if (passwordController.value.text.isNotEmpty) {
-      isPasswordIconVisible = true;
+      setState(() {
+        isPasswordIconVisible = true;
+      });
     }
     if (passwordController.value.text.isEmpty) {
-      isPasswordIconVisible = false;
-    }
-  }
-
-  void emailEntered() {
-    if (emailController.value.text.isNotEmpty) {
-      isEmailIconVisible = true;
-    }
-    if (emailController.value.text.isEmpty) {
-      isEmailIconVisible = false;
+      setState(() {
+        isPasswordIconVisible = false;
+      });
     }
   }
 
@@ -92,66 +100,69 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
                 child: Container(
                   height: 300,
                   width: MediaQuery.of(context).size.width * 0.9,
-                  child: Card(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        inputField(
-                            padding: EdgeInsets.only(
-                                bottom: 20, left: 10, right: 10),
-                            text: 'E-mail',
-                            prefixIcon: Icons.alternate_email,
-                            controller: emailController,
-                            suffixIcon: Icons.check,
-                            isSuffixIconVisible: isEmailIconVisible),
-                        inputField(
-                            padding: EdgeInsets.only(
-                                bottom: 20, left: 10, right: 10),
-                            text: 'Password',
-                            prefixIcon: Icons.lock,
-                            controller: passwordController,
-                            suffixIcon: Icons.check,
-                            isSuffixIconVisible: isPasswordIconVisible,
-                            obscureText: true),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: Center(
-                            child: Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                  color: Colors.grey[700],
-                                  decoration: TextDecoration.underline),
+                  child: Hero(
+                    tag: 'card',
+                    child: Card(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          inputField(
+                              padding: EdgeInsets.only(
+                                  bottom: 20, left: 10, right: 10),
+                              text: 'E-mail',
+                              prefixIcon: Icons.alternate_email,
+                              controller: emailController,
+                              suffixIcon: Icons.check,
+                              isSuffixIconVisible: isEmailIconVisible),
+                          inputField(
+                              padding: EdgeInsets.only(
+                                  bottom: 20, left: 10, right: 10),
+                              text: 'Password',
+                              prefixIcon: Icons.lock,
+                              controller: passwordController,
+                              suffixIcon: Icons.check,
+                              isSuffixIconVisible: isPasswordIconVisible,
+                              obscureText: true),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 16.0),
+                            child: Center(
+                              child: Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                    color: Colors.grey[700],
+                                    decoration: TextDecoration.underline),
+                              ),
                             ),
                           ),
-                        ),
-                        Visibility(
-                          visible: isButtonVisible,
-                          child: FlatButton(
-                            color: Colors.orange,
-                            padding: EdgeInsets.symmetric(
-                                vertical: 16, horizontal: 50),
-                            onPressed: () {
-                              setState(() {
-                                animation = 'Jump';
-                              });
-                            },
-                            child: Text(
-                              'Submit',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                          Visibility(
+                            visible: isButtonVisible,
+                            child: FlatButton(
+                              color: Colors.orange,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 16, horizontal: 50),
+                              onPressed: () {
+                                setState(() {
+                                  animation = 'Jump';
+                                });
+                              },
+                              child: Text(
+                                'Submit',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(30.0),
+                              ),
                             ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0),
-                            ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      elevation: 5,
+                      margin: EdgeInsets.all(10),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    elevation: 5,
-                    margin: EdgeInsets.all(10),
                   ),
                 ),
               ),
