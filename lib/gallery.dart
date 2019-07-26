@@ -69,7 +69,8 @@ class Gallery extends StatelessWidget {
     final List<GestureDetector> cards = <GestureDetector>[
       Cards(imgPath: 'images/Login1.jpeg', path: '/login1').build(context),
       Cards(imgPath: 'images/Login2.png', path: '/login2').build(context),
-      Cards(imgPath: 'images/Login3.jpeg', path: '/login3').build(context)
+      Cards(imgPath: 'images/Login3.jpeg', path: '/login3').build(context),
+      Cards(imgPath: 'images/Login4.png', path: '/login4').build(context)
     ];
     return cards;
   }

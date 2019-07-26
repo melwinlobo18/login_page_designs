@@ -6,6 +6,8 @@ import 'registrationpage2.dart';
 import 'gallery.dart';
 import 'loginpage3.dart';
 import 'registrationpage3.dart';
+import 'loginpage4.dart';
+import 'registrationpage4.dart';
 
 void main() => runApp(Home());
 
@@ -22,6 +24,8 @@ class Home extends StatelessWidget {
         '/registration2': (context) => Registration2(),
         '/login3': (context) => Login3(),
         '/registration3': (context) => Registration3(),
+        '/login4': (context) => Login4(),
+        '/registration4': (context) => Registration4(),
       },
     );
   }
