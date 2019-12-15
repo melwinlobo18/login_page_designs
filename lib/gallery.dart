@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class _PageSelector extends StatelessWidget {
   const _PageSelector({this.cards});
 
-  final List<GestureDetector> cards;
+  final List<Card> cards;
 
   void _handleArrowButtonPress(BuildContext context, int delta) {
     final TabController controller = DefaultTabController.of(context);
@@ -50,7 +50,7 @@ class _PageSelector extends StatelessWidget {
               height: 560,
               width: 360,
               child: TabBarView(
-                children: cards.map<Widget>((GestureDetector cards) {
+                children: cards.map<Widget>((Card cards) {
                   return cards;
                 }).toList(),
               ),
@@ -66,7 +66,7 @@ class Gallery extends StatelessWidget {
   static const String routeName = '/material/page-selector';
 
   List cardList(BuildContext context) {
-    final List<GestureDetector> cards = <GestureDetector>[
+    final List<Card> cards = <Card>[
       Cards(imgPath: 'images/Login1.jpeg', path: '/login1').build(context),
       Cards(imgPath: 'images/Login2.png', path: '/login2').build(context),
       Cards(imgPath: 'images/Login3.jpeg', path: '/login3').build(context),
@@ -92,19 +92,41 @@ class Cards extends StatelessWidget {
   Cards({this.imgPath, this.path});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        child: Card(
-          semanticContainer: true,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Image.asset(imgPath, fit: BoxFit.cover),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+    return Card(
+      semanticContainer: true,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Column(
+        children: <Widget>[
+          Container(
+            width: 400,
+            height: 450,
+            child: Image.asset(imgPath, fit: BoxFit.cover),
           ),
-          elevation: 5,
-          margin: EdgeInsets.all(10),
-        ),
-        onTap: () {
-          Navigator.pushNamed(context, path);
-        });
+          SizedBox(
+            height: 18,
+          ),
+          Center(
+            child: RaisedButton(
+                elevation: 5,
+                padding: EdgeInsets.all(16),
+                child: Icon(
+                  Icons.open_in_new,
+                  size: 20,
+                  color: Colors.white,
+                ),
+                color: Colors.grey[600],
+                onPressed: () {
+                  Navigator.pushNamed(context, path);
+                },
+                shape: CircleBorder()),
+          )
+        ],
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      elevation: 5,
+      margin: EdgeInsets.all(10),
+    );
   }
 }

@@ -26,6 +26,12 @@ dependencies:
 
   flare_flutter: ^1.5.4
 
+  font_awesome_flutter: ^8.5.0
+
+  share: ^0.6.2+1
+
+  url_launcher: ^5.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
