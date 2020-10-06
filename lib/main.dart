@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:sample_designs/gallery.dart';
+import 'package:sample_designs/login_page_1/loginpage1.dart';
+import 'package:sample_designs/login_page_1/registrationpage1.dart';
+import 'package:sample_designs/login_page_2/loginpage2.dart';
+import 'package:sample_designs/login_page_2/registrationpage2.dart';
+import 'package:sample_designs/login_page_3/loginpage3.dart';
 import 'package:sample_designs/login_page_3/registrationpage3.dart';
+import 'package:sample_designs/login_page_4/loginpage4.dart';
 import 'package:sample_designs/login_page_4/registrationpage4.dart';
-import 'login_page_1/loginpage1.dart';
-import 'login_page_1/registrationpage1.dart';
-import 'login_page_2/loginpage2.dart';
-import 'login_page_2/registrationpage2.dart';
-import 'gallery.dart';
-import 'login_page_3/loginpage3.dart';
-
-import 'login_page_4/loginpage4.dart';
 
 void main() => runApp(Home());
 
