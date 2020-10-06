@@ -17,13 +17,11 @@ class Login1 extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.2,
                     ),
-                    Container(
-                      height: 80,
-                      width: 140,
-                      child: Placeholder(
-                        color: Colors.black,
-                      ),
+                    CircleAvatar(
+                      child: Image.asset('assets/images/profile_avatar.png'),
+                      radius: 80,
                     ),
+                    SizedBox(height: 25),
                     TextField(
                       decoration: InputDecoration(
                         icon: Icon(
