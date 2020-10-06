@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'validation.dart';
+import '../utils/validation.dart';
 
 class Registration1 extends StatefulWidget {
   @override

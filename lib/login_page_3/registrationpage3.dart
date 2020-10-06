@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
-import 'validation.dart';
+import 'package:sample_designs/utils/validation.dart';
 
 class Registration3 extends StatefulWidget {
   @override
