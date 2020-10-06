@@ -81,7 +81,7 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
                     color: Colors.orange,
                     child: Center(
                       child: FlareActor(
-                        "animations/minion.flr",
+                        "assets/animations/minion.flr",
                         alignment: Alignment.center,
                         fit: BoxFit.contain,
                         animation: "$animation",
