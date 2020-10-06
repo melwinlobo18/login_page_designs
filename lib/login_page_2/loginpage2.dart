@@ -18,13 +18,11 @@ class Login2 extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.2,
                     ),
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Placeholder(
-                        color: Color(0xFFD00E3F),
-                      ),
+                    CircleAvatar(
+                      child: Image.asset('assets/images/profile_avatar.png'),
+                      radius: 80,
                     ),
+                    SizedBox(height: 25),
                     inputField(
                       padding: EdgeInsets.only(top: 30, bottom: 20),
                       text: 'E-mail',

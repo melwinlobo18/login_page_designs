@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Login4 extends StatelessWidget {
+class Login4 extends StatefulWidget {
+  @override
+  _Login4State createState() => _Login4State();
+}
+
+class _Login4State extends State<Login4> {
+  bool _isLogin = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -67,24 +74,33 @@ class Login4 extends StatelessWidget {
                 child: RaisedButton(
                     elevation: 10,
                     padding: EdgeInsets.all(16),
-                    child: Icon(
-                      Icons.arrow_forward,
-                      size: 32,
-                      color: Colors.white,
-                    ),
+                    child: !_isLogin
+                        ? Icon(
+                            Icons.arrow_forward,
+                            size: 32,
+                            color: Colors.white,
+                          )
+                        : CircularProgressIndicator(
+                            backgroundColor: Colors.white,
+                          ),
                     color: Colors.greenAccent,
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _isLogin = !_isLogin;
+                      });
+                    },
                     shape: CircleBorder()),
               ),
               Positioned(
                 top: MediaQuery.of(context).size.height / 1.55,
-                right: 0,
+                right: 8,
                 child: Text(
                   'Forgot Password ?',
                   style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.grey,
-                      decoration: TextDecoration.underline),
+                    fontSize: 18,
+                    color: Colors.orange[800],
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
               Positioned(
