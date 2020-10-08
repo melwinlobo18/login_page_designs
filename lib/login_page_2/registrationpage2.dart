@@ -41,15 +41,9 @@ class _Registration2State extends State<Registration2> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.05,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 80.0),
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          child: Placeholder(
-                            color: Color(0xFFD00E3F),
-                          ),
-                        ),
+                      CircleAvatar(
+                        child: Image.asset('assets/images/profile_avatar.png'),
+                        radius: 80,
                       ),
                       inputField(
                         padding: EdgeInsets.only(top: 30, bottom: 20),

@@ -16,13 +16,12 @@ class Login2 extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.05,
                     ),
                     CircleAvatar(
                       child: Image.asset('assets/images/profile_avatar.png'),
                       radius: 80,
                     ),
-                    SizedBox(height: 25),
                     inputField(
                       padding: EdgeInsets.only(top: 30, bottom: 20),
                       text: 'E-mail',
@@ -64,7 +63,7 @@ class Login2 extends StatelessWidget {
               Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 32.0, bottom: 16),
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 16),
                     child: Center(
                       child: Text(
                         'Don\'t have an account?',
@@ -89,6 +88,7 @@ class Login2 extends StatelessWidget {
                       },
                     ),
                   ),
+                  SizedBox(height: 10,)
                 ],
               )
             ],

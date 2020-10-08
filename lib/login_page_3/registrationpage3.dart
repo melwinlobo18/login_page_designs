@@ -47,7 +47,7 @@ class _Registration3State extends State<Registration3> {
               height: 300,
               width: 300,
               child: FlareActor(
-                "animations/minion.flr",
+                "assets/animations/minion.flr",
                 alignment: Alignment.center,
                 fit: BoxFit.contain,
                 animation: "Wave",
@@ -73,7 +73,7 @@ class _Registration3State extends State<Registration3> {
                           children: <Widget>[
                             inputField(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 20),
+                                    horizontal: 10, vertical: 15),
                                 text: 'First Name *',
                                 prefixIcon: Icons.person,
                                 validator: validation.validateFirstName),
@@ -84,7 +84,7 @@ class _Registration3State extends State<Registration3> {
                                 validator: validation.validateLastName),
                             inputField(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 20),
+                                    horizontal: 10, vertical: 15),
                                 text: 'E-mail *',
                                 prefixIcon: Icons.alternate_email,
                                 validator: validation.validateEmail),
@@ -95,11 +95,11 @@ class _Registration3State extends State<Registration3> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(vertical: 20.0),
+                                  const EdgeInsets.only(top: 20),
                               child: FlatButton(
                                 color: Colors.orange,
                                 padding: EdgeInsets.symmetric(
-                                    vertical: 16, horizontal: 50),
+                                    vertical: 10, horizontal: 50),
                                 onPressed: _validator,
                                 child: Text(
                                   'Submit',
@@ -127,13 +127,13 @@ class _Registration3State extends State<Registration3> {
             ),
           ),
           Positioned(
-            left: MediaQuery.of(context).size.width * 0.15,
+            left: MediaQuery.of(context).size.width * 0.1,
             bottom: MediaQuery.of(context).size.height * 0.05,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'Already have an account ?',
+                  'Already have an account? ',
                   style: TextStyle(
                     color: Colors.grey[750],
                     fontSize: 16,
@@ -141,7 +141,7 @@ class _Registration3State extends State<Registration3> {
                 ),
                 GestureDetector(
                   child: Text(
-                    ' Sign in',
+                    'Sign in',
                     style: TextStyle(
                         color: Colors.orange,
                         fontSize: 16,

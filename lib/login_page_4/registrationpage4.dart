@@ -32,7 +32,7 @@ class _Registration4State extends State<Registration4> {
             children: <Widget>[
               Positioned(
                 top: MediaQuery.of(context).size.height / 3,
-                left: MediaQuery.of(context).size.width / 2.6,
+                left: MediaQuery.of(context).size.width / 2.7,
                 child: Text(
                   'Register',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
@@ -42,7 +42,7 @@ class _Registration4State extends State<Registration4> {
                 top: MediaQuery.of(context).size.height / 2.3,
                 left: 0,
                 child: Container(
-                  height: 220,
+                  height: 210,
                   width: MediaQuery.of(context).size.width * 0.8,
                   child: Card(
                     shape: RoundedRectangleBorder(
@@ -51,59 +51,55 @@ class _Registration4State extends State<Registration4> {
                           bottomRight: Radius.circular(100)),
                     ),
                     elevation: 10,
-                    child: ListView(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 50.0),
-                          child: Form(
-                            key: _formKey,
-                            autovalidate: _autoValidate,
-                            child: Column(
-                              children: <Widget>[
-                                TextFormField(
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      prefixIcon: Icon(
-                                        Icons.person,
-                                        color: Colors.grey,
-                                      ),
-                                      labelText: 'User Name *'),
-                                  validator: validation.validateFirstName,
-                                ),
-                                Divider(),
-                                TextFormField(
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      prefixIcon: Icon(
-                                        Icons.lock,
-                                        color: Colors.grey,
-                                      ),
-                                      labelText: 'Email *'),
-                                  validator: validation.validateEmail,
-                                ),
-                                Divider(),
-                                TextFormField(
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      prefixIcon: Icon(
-                                        Icons.lock,
-                                        color: Colors.grey,
-                                      ),
-                                      labelText: 'Password *'),
-                                )
-                              ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 50.0),
+                      child: Form(
+                        key: _formKey,
+                        autovalidate: _autoValidate,
+                        child: ListView(
+                          children: <Widget>[
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.grey,
+                                  ),
+                                  labelText: 'User Name *'),
+                              validator: validation.validateFirstName,
                             ),
-                          ),
-                        )
-                      ],
+                            Divider(height: 1),
+                            TextFormField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  prefixIcon: Icon(
+                                    Icons.lock,
+                                    color: Colors.grey,
+                                  ),
+                                  labelText: 'Email *'),
+                              validator: validation.validateEmail,
+                            ),
+                            Divider(height: 1),
+                            TextFormField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  prefixIcon: Icon(
+                                    Icons.lock,
+                                    color: Colors.grey,
+                                  ),
+                                  labelText: 'Password *'),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height / 1.88,
+                top: MediaQuery.of(context).size.height / 1.85,
                 left: MediaQuery.of(context).size.width / 1.5,
                 child: RaisedButton(
                     elevation: 10,
