@@ -29,7 +29,7 @@ class _Login4State extends State<Login4> {
                 top: MediaQuery.of(context).size.height / 2.3,
                 left: 0,
                 child: Container(
-                  height: 145,
+                  height: 150,
                   width: MediaQuery.of(context).size.width * 0.8,
                   child: Card(
                     shape: RoundedRectangleBorder(
@@ -40,7 +40,7 @@ class _Login4State extends State<Login4> {
                     elevation: 10,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 50.0),
-                      child: Column(
+                      child: ListView(
                         children: <Widget>[
                           TextField(
                             decoration: InputDecoration(
@@ -51,7 +51,7 @@ class _Login4State extends State<Login4> {
                                 ),
                                 labelText: 'User Name *'),
                           ),
-                          Divider(),
+                          Divider(height: 1,),
                           TextField(
                             obscureText: true,
                             decoration: InputDecoration(
@@ -92,7 +92,7 @@ class _Login4State extends State<Login4> {
                     shape: CircleBorder()),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height / 1.55,
+                top: MediaQuery.of(context).size.height / 1.5,
                 right: 8,
                 child: Text(
                   'Forgot Password ?',

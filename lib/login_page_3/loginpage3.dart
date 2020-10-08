@@ -68,64 +68,63 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: ListView(
-        children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    color: Colors.orange,
-                    child: Center(
-                      child: FlareActor(
-                        "assets/animations/minion.flr",
-                        alignment: Alignment.center,
-                        fit: BoxFit.contain,
-                        animation: "$animation",
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: ListView(
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.5,
+                      color: Colors.orange,
+                      child: Center(
+                        child: FlareActor(
+                          "assets/animations/minion.flr",
+                          alignment: Alignment.center,
+                          fit: BoxFit.contain,
+                          animation: "$animation",
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.35,
-                left: MediaQuery.of(context).size.width * 0.05,
-                child: Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Hero(
-                    tag: 'card',
-                    child: Card(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          inputField(
-                              padding: EdgeInsets.only(
-                                  bottom: 20, left: 10, right: 10),
-                              text: 'E-mail',
-                              prefixIcon: Icons.alternate_email,
-                              controller: emailController,
-                              suffixIcon: Icons.check,
-                              isSuffixIconVisible: isEmailIconVisible),
-                          inputField(
-                              padding: EdgeInsets.only(
-                                  bottom: 20, left: 10, right: 10),
-                              text: 'Password',
-                              prefixIcon: Icons.lock,
-                              controller: passwordController,
-                              suffixIcon: Icons.check,
-                              isSuffixIconVisible: isPasswordIconVisible,
-                              obscureText: true),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 16.0),
-                            child: Center(
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.46,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
+                Positioned(
+                  top: MediaQuery.of(context).size.height * 0.35,
+                  left: MediaQuery.of(context).size.width * 0.05,
+                  child: Container(
+                    height: 300,
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    child: Hero(
+                      tag: 'card',
+                      child: Card(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            inputField(
+                                padding: EdgeInsets.only(
+                                    bottom: 20, left: 10, right: 10),
+                                text: 'E-mail',
+                                prefixIcon: Icons.alternate_email,
+                                controller: emailController,
+                                suffixIcon: Icons.check,
+                                isSuffixIconVisible: isEmailIconVisible),
+                            inputField(
+                                padding: EdgeInsets.only(
+                                    bottom: 20, left: 10, right: 10),
+                                text: 'Password',
+                                prefixIcon: Icons.lock,
+                                controller: passwordController,
+                                suffixIcon: Icons.check,
+                                isSuffixIconVisible: isPasswordIconVisible,
+                                obscureText: true),
+                            Center(
                               child: Text(
                                 'Forgot Password?',
                                 style: TextStyle(
@@ -133,76 +132,76 @@ class _Login3State extends State<Login3> with SingleTickerProviderStateMixin {
                                     decoration: TextDecoration.underline),
                               ),
                             ),
-                          ),
-                          Visibility(
-                            visible: isButtonVisible,
-                            child: FlatButton(
-                              color: Colors.orange,
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16, horizontal: 50),
-                              onPressed: () {
-                                setState(() {
-                                  animation = 'Jump';
-                                });
-                              },
-                              child: Text(
-                                'Submit',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                            Visibility(
+                              visible: isButtonVisible,
+                              child: FlatButton(
+                                color: Colors.orange,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 50),
+                                onPressed: () {
+                                  setState(() {
+                                    animation = 'Jump';
+                                  });
+                                },
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(30.0),
+                                ),
                               ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(30.0),
-                              ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        elevation: 5,
+                        margin: EdgeInsets.all(10),
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      elevation: 5,
-                      margin: EdgeInsets.all(10),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.85,
-                left: MediaQuery.of(context).size.width * 0.3,
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: Center(
-                        child: Text(
-                          'Don\'t have an account?',
-                          style: TextStyle(
-                            color: Colors.grey[600],
+                Positioned(
+                  top: MediaQuery.of(context).size.height * 0.85,
+                  left: MediaQuery.of(context).size.width * 0.25,
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: Center(
+                          child: Text(
+                            'Don\'t have an account?',
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Center(
-                      child: GestureDetector(
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              color: Colors.orange,
-                              decoration: TextDecoration.underline,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                      Center(
+                        child: GestureDetector(
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                color: Colors.orange,
+                                decoration: TextDecoration.underline,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/registration3');
+                          },
                         ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/registration3');
-                        },
                       ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          )
-        ],
+                    ],
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

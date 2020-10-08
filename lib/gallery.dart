@@ -22,7 +22,7 @@ class __PageSelectorState extends State<_PageSelector> {
             enlargeCenterPage: true,
             enableInfiniteScroll: false,
             height: height * 0.65,
-            initialPage: 1,
+            initialPage: 0,
             scrollPhysics: BouncingScrollPhysics()
             // autoPlay: true,
             ),
@@ -46,6 +46,8 @@ class Gallery extends StatelessWidget {
       CarouselCard(imgPath: 'assets/images/Login3.jpeg', path: '/login3')
           .build(context),
       CarouselCard(imgPath: 'assets/images/Login4.png', path: '/login4')
+          .build(context),
+      CarouselCard(imgPath: 'assets/images/Login5.png', path: '/login5')
           .build(context)
     ];
     return cards;

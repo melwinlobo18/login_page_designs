@@ -58,7 +58,6 @@ class _Registration1State extends State<Registration1> {
                 key: _formKey,
                 autovalidate: _autoValidate,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.8,
                   decoration: BoxDecoration(
                     color: Color(0xFF425C5A),
                     borderRadius: BorderRadius.only(
@@ -125,7 +124,10 @@ class _Registration1State extends State<Registration1> {
                               },
                             )
                           ],
-                        )
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
                       ],
                     ),
                   ),
